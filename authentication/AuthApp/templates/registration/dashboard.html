@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %} Dashboard {% endblock %}
+
+{% block content %}
+
+    <h1>Dashboard</h1>
+    Hello, {{ request.user.username }}
+    <p>Welcome to your page</p>
+    <h1>Your info</h1>
+    <p>Username: {{ request.user.username }}</p>
+    <p>First Name: {{ request.user.first_name }}</p>
+    <p>Last Name: {{ request.user.last_name }}</p> 
+    <p>E-mail address: {{ request.user.email }}</p>
+
+    <p>You can change your password <a href="{% url 'password_change' %}">here</a></p>
+
+    <p>Your can <a href="{% url 'edit_profile' %}">edit your profile</a> here</p>
+
+    <a href="{% url 'logout' %}">Logout</a>
+
+{% endblock %}
